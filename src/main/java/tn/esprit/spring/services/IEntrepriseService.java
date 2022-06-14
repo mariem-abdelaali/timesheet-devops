@@ -7,8 +7,8 @@ public interface IEntrepriseService {
 	
 	
 	Entreprise addEntreprise(Entreprise entreprise);
-	void deleteEntrepriseById(String id);
+	void deleteEntrepriseById(int id);
 	Entreprise updateEntreprise(Entreprise entreprise);
 	List<Entreprise> retrieveAllEntreprise(); 
-	Entreprise retrieveEntrepriseById(String id);
+	Entreprise retrieveEntrepriseById(int id);
 }

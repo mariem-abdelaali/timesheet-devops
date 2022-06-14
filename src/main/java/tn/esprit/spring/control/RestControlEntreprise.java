@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.services.IEntrepriseService;
 
@@ -23,27 +23,45 @@ public class RestControlEntreprise {
 	
 	
 	@PostMapping("/ajouterEntreprise")
-    public Long ajouterEntreprise(@PathVariable("Entreprise") Entreprise entreprise) {
-        ientrepriseservice.addEntreprise(entreprise);
-        return entreprise.getId();
+	 @ResponseBody
+    public Entreprise ajouterEntreprise(@RequestBody Entreprise entreprise) {
+		return ientrepriseservice.addEntreprise(entreprise);
+        //return entreprise.getId();
     }
 	
 	
 	// http://localhost:8081/timesheet-devops/deleteEntrepriseById/1
     @DeleteMapping("/deleteEntrepriseById/{identreprise}") 
 	@ResponseBody 
-	public void deleteEntrepriseById(@PathVariable("identreprise")String entrepriseId)
+	public void deleteEntrepriseById(@PathVariable("identreprise") int entrepriseId)
 	{
 		ientrepriseservice.deleteEntrepriseById(entrepriseId);
 	}
     
     
+    
+  
     // http://localhost:8081/timesheet-devops/getEntrepriseById/1
     @GetMapping(value = "getEntrepriseById/{identreprise}")
     @ResponseBody
-	public Entreprise getEntrepriseById(@PathVariable("identreprise") String entrepriseId) {
+	public Entreprise getEntrepriseById(@PathVariable("identreprise") int entrepriseId) {
 
 		return ientrepriseservice.retrieveEntrepriseById(entrepriseId);
 	}
+    
+    
+    
+  
+    @GetMapping("/getAllEntreprise")
+    @ResponseBody
+    public List<Entreprise> getAllEntreprise() {
 
+		return ientrepriseservice.retrieveAllEntreprise();
+	}
+    
+  
+
+
+    
+   
 }

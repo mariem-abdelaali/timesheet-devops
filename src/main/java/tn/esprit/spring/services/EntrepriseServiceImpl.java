@@ -40,11 +40,11 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	}
 
 	@Override
-	public void deleteEntrepriseById(String id) {
+	public void deleteEntrepriseById(int id) {
 		try {
 			// TODO Log à ajouter en début de la méthode 
 			l.info("In Method deleteEntrepriseById :");
-			entrepriseRepoistory.deleteById(Long.parseLong(id)); 
+			entrepriseRepoistory.deleteById(id); 
 			// TODO Log à ajouter à la fin de la méthode 
 			
 		} catch (Exception e) {
@@ -93,12 +93,12 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	}
 
 	@Override
-	public Entreprise retrieveEntrepriseById(String id) {
+	public Entreprise retrieveEntrepriseById(int id) {
 		Entreprise entreprise = null; 
 		try {
 			// TODO Log à ajouter en début de la méthode 
 			l.info("In Method retrieveEntrepriseById :");
-			entreprise =  entrepriseRepoistory.findById(Long.parseLong(id)).get(); 
+			entreprise =  entrepriseRepoistory.findById(id).get(); 
 			// TODO Log à ajouter à la fin de la méthode 
 			
 		} catch (Exception e) {
