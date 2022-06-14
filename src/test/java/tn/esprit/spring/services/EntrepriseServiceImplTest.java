@@ -23,7 +23,7 @@ import tn.esprit.spring.entities.User;
 @TestMethodOrder(OrderAnnotation.class)
 public class EntrepriseServiceImplTest {
 
-	
+	/*
 
 	@Autowired
 	IEntrepriseService entr;
@@ -69,5 +69,5 @@ public class EntrepriseServiceImplTest {
 		entr.deleteEntrepriseById("1");
 		Assertions.assertNull(entr.retrieveEntrepriseById("1"));
 		
-		}
+		}*/
 }
