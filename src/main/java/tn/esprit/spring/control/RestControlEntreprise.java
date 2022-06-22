@@ -21,7 +21,7 @@ public class RestControlEntreprise {
 	@Autowired
 	IEntrepriseService ientrepriseservice;
 	
-	 // http://localhost:8082/timesheet-devops/ajouterEntreprise
+	 // http://localhost:8082/ajouterEntreprise
 	@PostMapping("/ajouterEntreprise")
 	 @ResponseBody
     public Entreprise ajouterEntreprise(@RequestBody Entreprise entreprise) {
@@ -30,7 +30,7 @@ public class RestControlEntreprise {
     }
 	
 	
-	// http://localhost:8082/timesheet-devops/deleteEntrepriseById/1
+	// http://localhost:8082/deleteEntrepriseById/1
     @DeleteMapping("/deleteEntrepriseById/{identreprise}") 
 	@ResponseBody 
 	public void deleteEntrepriseById(@PathVariable("identreprise") int entrepriseId)
@@ -41,7 +41,7 @@ public class RestControlEntreprise {
     
     
   
-    // http://localhost:8082/timesheet-devops/getEntrepriseById/1
+    // http://localhost:8082/getEntrepriseById/1
     @GetMapping("/getEntrepriseById/{identreprise}")
     @ResponseBody
 	public Entreprise getEntrepriseById(@PathVariable("identreprise") int entrepriseId) {
@@ -51,7 +51,7 @@ public class RestControlEntreprise {
     
     
     
- // http://localhost:8082/timesheet-devops/getAllEntreprise
+ // http://localhost:8082/getAllEntreprise
     @GetMapping("/getAllEntreprise")
     @ResponseBody
     public List<Entreprise> getAllEntreprise() {
