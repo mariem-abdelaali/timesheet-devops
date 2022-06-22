@@ -30,7 +30,7 @@ public class RestControlEntreprise {
     }
 	
 	
-	// http://localhost:8082/deleteEntrepriseById/{identreprise}
+	// http://localhost:8082/deleteEntrepriseById/1
     @DeleteMapping("/deleteEntrepriseById/{identreprise}") 
 	@ResponseBody 
 	public void deleteEntrepriseById(@PathVariable("identreprise") int entrepriseId)
@@ -41,7 +41,7 @@ public class RestControlEntreprise {
     
     
   
-    // http://localhost:8082/getEntrepriseById/{identreprise}
+    // http://localhost:8082/getEntrepriseById/1
     @GetMapping("/getEntrepriseById/{identreprise}")
     @ResponseBody
 	public Entreprise getEntrepriseById(@PathVariable("identreprise") int entrepriseId) {
