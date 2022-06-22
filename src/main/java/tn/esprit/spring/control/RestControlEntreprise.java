@@ -42,7 +42,6 @@ public class RestControlEntreprise {
     
   
     // http://localhost:8082/getEntrepriseById/{identreprise}
-    
     @GetMapping("/getEntrepriseById/{identreprise}")
     @ResponseBody
 	public Entreprise getEntrepriseById(@PathVariable("identreprise") int entrepriseId) {
