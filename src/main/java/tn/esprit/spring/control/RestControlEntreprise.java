@@ -30,7 +30,7 @@ public class RestControlEntreprise {
     }
 	
 	
-	// http://localhost:8082/deleteEntrepriseById/1
+	// http://localhost:8082/deleteEntrepriseById/{identreprise}
     @DeleteMapping("/deleteEntrepriseById/{identreprise}") 
 	@ResponseBody 
 	public void deleteEntrepriseById(@PathVariable("identreprise") int entrepriseId)
