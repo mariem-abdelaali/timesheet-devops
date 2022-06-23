@@ -12,8 +12,7 @@ public interface IEntrepriseService {
 	Entreprise updateEntreprise(Entreprise entreprise);
 	List<Entreprise> retrieveAllEntreprise(); 
 	Entreprise retrieveEntrepriseById(int id);
-	public int ajouterDepartement(Departement dep);
 	public void affecterDepartementAEntreprise(int depId, int entrepriseId);
 	List<String> getAllDepartementsNamesByEntreprise(int entrepriseId);	
-	//public boolean deleteDepartementById(int depId);
+	
 }

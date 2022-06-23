@@ -127,11 +127,6 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	}
 	
 	
-	public int ajouterDepartement(Departement dep) {
-		departementRepository.save(dep);
-		return dep.getId();
-	}
-	
 	public void affecterDepartementAEntreprise(int depId, int entrepriseId) {
 		//Le bout Master de cette relation N:1 est departement  
 				//donc il faut rajouter l'entreprise a departement 

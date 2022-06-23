@@ -70,16 +70,7 @@ public class RestControlEntreprise {
 		ientrepriseservice.affecterDepartementAEntreprise(depId, entrepriseId);
 	}
     
-    
-    // http://localhost:8082/ajouterDepartement
- 	//{"id":1,"name":"Dep1"}
-
- 	@PostMapping("/ajouterDepartement")
- 	@ResponseBody
-	public int ajouterDepartement(@RequestBody Departement dep) {
-		return ientrepriseservice.ajouterDepartement(dep);
-	}
- 
+   
 	 // http://localhost:8082/getAllDepartementsNamesByEntreprise/1
     @GetMapping(value = "getAllDepartementsNamesByEntreprise/{identreprise}")
     @ResponseBody
