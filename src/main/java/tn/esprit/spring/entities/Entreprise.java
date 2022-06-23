@@ -27,10 +27,19 @@ public class Entreprise implements Serializable{
 	
 	private String raisonSocial;
 	
+	
+
+	@OneToMany(mappedBy="entreprise", 
+			cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, 
+			fetch=FetchType.EAGER)
+	private List<Departement> departements = new ArrayList<>();
+	
 	public Entreprise() {
 		super();
 	}
 
+
+	
 	public Entreprise(String name, String raisonSocial) {
 		this.name = name;
 		this.raisonSocial = raisonSocial;
@@ -62,6 +71,12 @@ public class Entreprise implements Serializable{
 	
 	
 
+	public List<Departement> getDepartements() {
+		return departements;
+	}
 
+	public void setDepartements(List<Departement> departements) {
+		this.departements = departements;
+	}
 	
 }

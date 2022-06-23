@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
+
+import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.services.IEntrepriseService;
 
@@ -62,7 +64,26 @@ public class RestControlEntreprise {
     
   
 
-
+	// http://localhost:8082/affecterDepartementAEntreprise/1/1
+    @PutMapping(value = "/affecterDepartementAEntreprise/{iddept}/{identreprise}") 
+	public void affecterDepartementAEntreprise(@PathVariable("iddept")int depId, @PathVariable("identreprise")int entrepriseId) {
+		ientrepriseservice.affecterDepartementAEntreprise(depId, entrepriseId);
+	}
     
-   
+    
+    // http://localhost:8082/ajouterDepartement
+ 	//{"id":1,"name":"Dep1"}
+
+ 	@PostMapping("/ajouterDepartement")
+ 	@ResponseBody
+	public int ajouterDepartement(@RequestBody Departement dep) {
+		return ientrepriseservice.ajouterDepartement(dep);
+	}
+ 
+	 // http://localhost:8082/getAllDepartementsNamesByEntreprise/1
+    @GetMapping(value = "getAllDepartementsNamesByEntreprise/{identreprise}")
+    @ResponseBody
+	public List<String> getAllDepartementsNamesByEntreprise(@PathVariable("identreprise") int entrepriseId) {
+		return ientrepriseservice.getAllDepartementsNamesByEntreprise(entrepriseId);
+	}
 }
