@@ -24,6 +24,7 @@ public class RestControlEntreprise {
 	IEntrepriseService ientrepriseservice;
 	
 	 // http://localhost:8082/ajouterEntreprise
+	
 	@PostMapping("/ajouterEntreprise")
 	 @ResponseBody
     public Entreprise ajouterEntreprise(@RequestBody Entreprise entreprise) {
