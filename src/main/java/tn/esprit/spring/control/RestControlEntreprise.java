@@ -23,7 +23,7 @@ public class RestControlEntreprise {
 	@Autowired
 	IEntrepriseService ientrepriseservice;
 	
-	 // http://localhost:6080/ajouterEntreprise
+	 // http://localhost:8082/ajouterEntreprise
 	@PostMapping("/ajouterEntreprise")
 	 @ResponseBody
     public Entreprise ajouterEntreprise(@RequestBody Entreprise entreprise) {
@@ -32,7 +32,7 @@ public class RestControlEntreprise {
     }
 	
 	
-	// http://localhost:6080/deleteEntrepriseById/{identreprise}
+	// http://localhost:8082/deleteEntrepriseById/{identreprise}
 	
     @DeleteMapping("/deleteEntrepriseById/{identreprise}") 
 	@ResponseBody 
@@ -44,7 +44,7 @@ public class RestControlEntreprise {
     
     
   
-    // http://localhost:6080/getEntrepriseById/{identreprise}
+    // http://localhost:8082/getEntrepriseById/{identreprise}
     @GetMapping("/getEntrepriseById/{identreprise}")
     @ResponseBody
 	public Entreprise getEntrepriseById(@PathVariable("identreprise") int entrepriseId) {
@@ -54,7 +54,7 @@ public class RestControlEntreprise {
     
     
     
- // http://localhost:6080/getAllEntreprise
+ // http://localhost:8082/getAllEntreprise
     @GetMapping("/getAllEntreprise")
     @ResponseBody
     public List<Entreprise> getAllEntreprise() {
@@ -64,14 +64,14 @@ public class RestControlEntreprise {
     
   
 
-	// http://localhost:6080/affecterDepartementAEntreprise/1/1
+	// http://localhost:8082/affecterDepartementAEntreprise/1/1
     @PutMapping(value = "/affecterDepartementAEntreprise/{iddept}/{identreprise}") 
 	public void affecterDepartementAEntreprise(@PathVariable("iddept")int depId, @PathVariable("identreprise")int entrepriseId) {
 		ientrepriseservice.affecterDepartementAEntreprise(depId, entrepriseId);
 	}
     
    
-	 // http://localhost:6080/getAllDepartementsNamesByEntreprise/1
+	 // http://localhost:8082/getAllDepartementsNamesByEntreprise/1
     @GetMapping(value = "getAllDepartementsNamesByEntreprise/{identreprise}")
     @ResponseBody
 	public List<String> getAllDepartementsNamesByEntreprise(@PathVariable("identreprise") int entrepriseId) {
