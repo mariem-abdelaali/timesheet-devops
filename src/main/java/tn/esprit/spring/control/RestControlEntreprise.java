@@ -64,7 +64,7 @@ public class RestControlEntreprise {
 	}
     
   
-
+//test build
 	// http://localhost:8082/affecterDepartementAEntreprise/1/1
     @PutMapping(value = "/affecterDepartementAEntreprise/{iddept}/{identreprise}") 
 	public void affecterDepartementAEntreprise(@PathVariable("iddept")int depId, @PathVariable("identreprise")int entrepriseId) {
