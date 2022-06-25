@@ -19,7 +19,7 @@ import tn.esprit.spring.repository.EntrepriseRepository;
 
 @Service
 public class EntrepriseServiceImpl implements IEntrepriseService {
-	private static final Logger logger = LogManager.getLogger(EntrepriseServiceImpl.class);
+	//private static final Logger logger = LogManager.getLogger(EntrepriseServiceImpl.class);
 
 	@Autowired
     EntrepriseRepository entrepriseRepoistory;
