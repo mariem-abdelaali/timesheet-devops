@@ -26,6 +26,7 @@ public class EntrepriseServiceImplTest {
 	
 
 	@Autowired
+	
 	IEntrepriseService entr;
 	
 	@Test
